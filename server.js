@@ -93,7 +93,4 @@ app.get('/map/:lon/:lat/:zoom', (req,res) => {
 
 
 
-const server = app.listen(process.env.PORT || 8099, () => {
-	const port = server.address().port;
-	console.log(`Server listening at port ${port}`);
-});
+app.listen(process.env.PORT || 8099);
