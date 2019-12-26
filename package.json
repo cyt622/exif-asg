@@ -1,0 +1,16 @@
+{
+    "name": "server",
+    "description": "NodeJS Express App",
+    "author": "Yee Ting Chung",
+    "version": "0.0.1",
+    "dependencies": {
+        "express": "*",
+        "ejs": "*",
+        "formidable": "*",
+        "exif": "*"
+    },
+    "engine": "node >= 0.10.0",
+    "scripts": {
+        "start": "node server"
+    }
+}

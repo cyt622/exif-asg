@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exif Demo</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		
+		<div class="container">
+			<h1><%= doc.title %></h1>
+			<p><%= doc.description %></p>
+			<div class="pull-left" style="width: 70%">
+
+				<img class="img-responsive" src="data:<%= doc.mimetype %>;base64,<%= doc.photo %>"/>
+			</div>
+			<div>
+				<div class="table-responsive">
+					<table class="table-bordered" style="margin: 0 0 1em 1.5em;">
+						<tbody>
+							<tr><td style="padding: 1em">Make: <%= doc.make %></td></tr>
+							<tr><td style="padding: 1em">Model: <%= doc.model %></td></tr>
+							<tr><td style="padding: 1em">Created on: <%= doc.exif.image.ModifyDate %></td></tr>
+							<tr><td style="padding: 1em">Location: <a href="/map/<%= doc.lon %>/<%= doc.lat %>/12">Map</a></td></tr>
+						</tbody>
+					</table>
+				</div>
+				
+				<a href="/" style="margin-left: 1.5em;" class="btn btn-primary" role="button">Home</a>
+			</div>
+
+		</div>
+
+		
+		
+	</body>
+</html>
