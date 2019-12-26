@@ -92,9 +92,6 @@ app.get('/map/:lon/:lat/:zoom', (req,res) => {
 });
 
 
-app.get('/*', (req,res) => {
-	res.redirect('/');
-});
 
 const server = app.listen(process.env.PORT || 8099, () => {
 	const port = server.address().port;
