@@ -77,6 +77,7 @@ app.post('/', (req, res) => {
 					});
 				} catch (error) {
 					console.log('Error catch');
+					res.status(500).render("error", {"msg": "Error"});
 				}
 				
 				
