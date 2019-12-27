@@ -18,7 +18,7 @@ app.get('/', (req,res) => {
 });
 
 // accept POST request on the homepage
-app.post('/', function (req, res) {
+app.post('/', (req, res) => {
 	let form = new formidable.IncomingForm();
 	form.parse(req, (err, fields, files) => {
 		if (files.photo.size == 0) {
@@ -36,6 +36,10 @@ app.post('/', function (req, res) {
 			}
 			
 			fs.readFile(filename, (err,data) => {
+				if (err) {
+					res.status(500).render("error", {"msg": "Error"});
+				}
+				
 				let doc = {
 					'title': fields.title,
 					'description': fields.description,
